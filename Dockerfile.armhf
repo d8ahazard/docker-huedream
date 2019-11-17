@@ -20,14 +20,14 @@ RUN \
 	| jq -r '.[0] | .tag_name'); \
  fi && \
  huedream_url=$(curl -s https://api.github.com/repos/d8ahazard/HueDream/releases/tags/"${HUEDREAM_RELEASE}" \
-	|jq -r '.assets[].browser_download_url' |grep linux) && \
+	|jq -r '.assets[].browser_download_url') && \
  mkdir -p \
 	/opt/huedream && \
  curl -o \
  /tmp/huedream.zip -L \
 	"${huedream_url}" && \
  unzip \
- /tmp/huedream.zip -D \
+ /tmp/huedream.zip -d \
 	/opt/huedream && \
  echo "**** clean up ****" && \
  rm -rf \

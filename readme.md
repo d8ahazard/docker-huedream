@@ -44,7 +44,8 @@ docker create \
   -e TZ=America/Chicago \
   -p 5000:5000 \
   --restart unless-stopped \
-  d8ahazard/huedream
+  --network=host \
+  digitalhigh/huedream
 ```
 
 
@@ -63,8 +64,7 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=America/Chicago
-    ports:
-      - 5000:5000
+    network_mode: "host"
     restart: unless-stopped
 ```
 
@@ -74,7 +74,6 @@ Container images are configured using parameters passed at runtime (such as thos
 
 | Parameter | Function |
 | :----: | --- |
-| `-p 5000` | The port for the HueDream webinterface |
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=America/Chicago` | Specify a timezone to use EG America/Chicago, this is required for HueDream |
