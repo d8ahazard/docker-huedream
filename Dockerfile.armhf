@@ -27,7 +27,7 @@ RUN \
  /tmp/huedream.tar.gz -L \
 	"${huedream_url}" && \
  tar ixzf \
- /tmp/huedream.tar.gz -d \
+ /tmp/huedream.tar.gz -C \
 	/opt/huedream --strip-components=1 && \
  echo "**** clean up ****" && \
  rm -rf \
