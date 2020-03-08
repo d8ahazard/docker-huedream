@@ -20,11 +20,13 @@ RUN \
 	HUEDREAM_RELEASE=$(curl -sX GET "https://api.github.com/repos/d8ahazard/HueDream/releases" \
 	| jq -r '.[0] | .tag_name'); \
  fi && \
+ echo "Huedream release is " ${HUEDREAM_RELEASE} && \
  huedream_url=$(curl -s https://api.github.com/repos/d8ahazard/HueDream/releases/tags/"${HUEDREAM_RELEASE}" \
 	|jq -r '.assets[].browser_download_url' |grep linux) && \
  mkdir -p \
 	/opt/huedream && \
  mkdir -p /etc/huedream && \
+ echo "Huedream URL is " ${huedream_url} && \
  curl -o \
  /tmp/huedream.tar.gz -L \
 	"${huedream_url}" && \
