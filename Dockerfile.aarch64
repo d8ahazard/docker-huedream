@@ -1,8 +1,9 @@
-FROM lsiobase/mono:arm64v8-LTS
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
+ENV ASPNETCORE_URLS=http://+:5666
 
 # set version label
 ARG HUEDREAM_RELEASE
-LABEL build_version="Digitalhigh 1.0.0"
+LABEL build_version="Digitalhigh 1.1.2a"
 LABEL maintainer="Digitalhigh"
 
 # environment settings
@@ -23,6 +24,7 @@ RUN \
 	|jq -r '.assets[].browser_download_url' |grep linux) && \
  mkdir -p \
 	/opt/huedream && \
+ mkdir -p /etc/huedream && \
  curl -o \
  /tmp/huedream.tar.gz -L \
 	"${huedream_url}" && \
@@ -39,3 +41,8 @@ RUN \
 COPY /root /
 
 # ports and volumes
+VOLUME /etc/huedream
+EXPOSE 1900/udp
+EXPOSE 2100/udp
+EXPOSE 5699
+EXPOSE 8888/udp

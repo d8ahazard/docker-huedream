@@ -42,7 +42,7 @@ docker create \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=America/Chicago \
-  -p 5000:5000 \
+  -p 5699:5699 \
   --restart unless-stopped \
   --network=host \
   digitalhigh/huedream
@@ -83,7 +83,7 @@ Container images are configured using parameters passed at runtime (such as thos
 &nbsp;
 ## Application Setup
 
-Access the webui at `<your-ip>:5000`, for more information check out [HueDream](https://github.com/HueDream/HueDream).
+Access the webui at `<your-ip>:5699`, for more information check out [HueDream](https://github.com/HueDream/HueDream).
 
 
 
