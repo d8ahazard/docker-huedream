@@ -7,5 +7,4 @@ umask "$UMASK_SET"
 cd /opt/huedream || exit
 
 exec \
-	s6-setuidgid abc mono --debug HueDream \
-	-nobrowser
+	HueDream
