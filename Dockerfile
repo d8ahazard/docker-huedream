@@ -22,7 +22,7 @@ RUN \
  fi && \
  echo "Huedream release is " ${HUEDREAM_RELEASE} && \
  huedream_url=$(curl -s https://api.github.com/repos/d8ahazard/HueDream/releases/tags/"${HUEDREAM_RELEASE}" \
-	|jq -r '.assets[].browser_download_url' |grep linux) && \
+	|jq -r '.assets[].browser_download_url' |grep -m 1 linux) && \
  mkdir -p \
 	/opt/huedream && \
  mkdir -p /etc/huedream && \
