@@ -5,6 +5,5 @@ UMASK_SET=${UMASK_SET:-022}
 umask "$UMASK_SET"
 
 cd /opt/huedream || exit
-
-exec \
-	HueDream
+echo "Starting HueDream"
+exec HueDream
