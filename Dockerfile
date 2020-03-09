@@ -47,6 +47,8 @@ VOLUME /etc/huedream
 EXPOSE 1900/udp
 EXPOSE 2100/udp
 EXPOSE 5699
+EXPOSE 5666
+EXPOSE 5000
 EXPOSE 8888/udp
 WORKDIR /opt/huedream
 ENTRYPOINT ["dotnet", "HueDream.dll"]
