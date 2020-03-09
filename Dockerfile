@@ -3,7 +3,7 @@ ENV ASPNETCORE_URLS=http://+:5699
 
 # set version label
 ARG HUEDREAM_RELEASE
-LABEL build_version="Digitalhigh 1.1.2b"
+LABEL build_version="Digitalhigh 1.1.2c"
 LABEL maintainer="Digitalhigh"
 
 # environment settings
