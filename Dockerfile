@@ -1,5 +1,5 @@
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1-buster-slim
-ENV ASPNETCORE_URLS=http://+:5666
+ENV ASPNETCORE_URLS=http://+:5699
 
 # set version label
 ARG HUEDREAM_RELEASE
